@@ -37,7 +37,8 @@ class Box:
         #bottom
         if dy != 0:
             t = (self.y1 - ys) / dy
-            x_intersect = xs + t * dx #-2
+            x_intersect = xs + t * dx
+            
             if t >= 0 and self.x1 <= x_intersect <= self.x2:
                 intersections.append((t, x_intersect, self.y1, "bottom"))
 
@@ -49,7 +50,7 @@ class Box:
                 intersections.append((t, x_intersect, self.y2, "top"))
 
         intersections.sort() #ordenas por el que tiene menor t -> el que esta mas cerca
-        print(f"Las intersecciones son: {intersections}")
+        
         t, x, y, side = intersections[0]
         
 
